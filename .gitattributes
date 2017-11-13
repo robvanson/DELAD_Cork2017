@@ -1,0 +1,10 @@
+Pictures/VirtualTherapyGame.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/aclc-logo.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/logo_ENG_Netherlands_Cancer_Institute_grootformaat.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/DataVault.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/Introduction.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/VirtualTherapy.png filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+Pictures/CC-share-alike.png filter=lfs diff=lfs merge=lfs -text
+Pictures/ filter=lfs diff=lfs merge=lfs -text

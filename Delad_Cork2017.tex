@@ -1,0 +1,551 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+%\documentclass[t,handout]{beamer}
+\usepackage{comment}
+\usepackage{relsize}
+\usepackage{pifont}
+\usepackage{tipa, vowel}
+%\usepackage{relsize}
+\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage[T1]{fontenc}
+%\usepackage[pdftex]{graphicx}
+\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphics}
+\usepackage[english,cleanlook]{isodate}
+
+\newcommand{\YEAR}{\the\year}
+\newcommand{\MONTH}{\the\month}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Presentation Themes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% no navigation bars:
+%\usetheme{Bergen} %based on inmargin and rectangles
+%\usetheme[secheader]{Boadilla} %much information on little space, option secheader gives current sections and subsection
+%\usetheme{Pittsburgh}% alleen standaard nav
+%\usetheme{Rochester}% helder, alleen standaard nav option [height] sets hight of frame title bar
+
+%%%% tree-like  navigation bars:
+%\usetheme{Antibes} %heel kaal
+%\usetheme{JuanLesPins}
+%\usetheme{Montpellier} % matig
+
+%%%% table of contents sidebar:
+%\usetheme{Berkeley}
+%\usetheme[right,hideothersubsections]{PaloAlto}% nav links
+%\usetheme[hideothersubsections]{Goettingen} % overzicht rechts
+%\usetheme[hideothersubsections]{Marburg} % donkere navigatiebalk rechts
+%\usetheme[right,hideothersubsections]{Hannover} % als Goetngen met overzicht links
+
+%%%% mini frame navigation:
+%\usetheme{Berlin}
+%\usetheme{Dresden} %nice
+%\usetheme{Ilmenau}
+%\usetheme{Darmstadt}
+%\usetheme{Frankfurt} %ok
+%\usetheme{Singapore} %helder ok nav boven+#sheets indicatie
+%\usetheme{Szeged} %helder ok nav boven+#sheets indicatie
+
+%%%%section and subsection tables:
+%\usetheme{Copenhagen}
+%\usetheme{Luebeck} % overzicht boven, auteur beneden
+%\usetheme{Malmoe} % nav boven
+%\usetheme[]{Warsaw}
+
+\usetheme[secheader]{Madrid} % alleen navigatie onder
+
+
+%%%%%innerthemes: title and part pages, itemize, enumerate, desciption, block, theorem/proof, figures, tables, footnotes and bibl. entries 
+%\useinnertheme{default} %
+%\useinnertheme{circles} % 
+%\useinnertheme{rectangles} %
+\useinnertheme{rounded} %
+%\useinnertheme{inmargin} %structure on left (like blocktitles) and normal info like block bodies on right
+
+%%%%%outerthemes: head and footline, sidebars, logo, frame title
+%\useoutertheme{infolines}%
+%\useoutertheme[footline=authorinstituretitle, subsection=false]{miniframes}%
+%\useoutertheme{smoothbars}%
+%\useoutertheme[right,height=0pt,hideothersubsections]{sidebar}%options:height=dimension, hideothersubsections, hideallsubsections, left, right, width=dimension
+%\useoutertheme{split}%
+%\useoutertheme{shadow}%
+%\useoutertheme{tree}%option:[hooks]
+%\useoutertheme{smoothtree}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Transparency Effects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercovered{transparent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Color Themes:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usecolortheme{sidebartab} %highlights current entry in table of contents
+%\usecolortheme[RGB={25,25,112}]{structure} %72,61,139
+\usecolortheme[RGB={72,61,139}]{structure} %72,61,139
+
+%%%%%%%%%
+%\usecolourtheme [option]{structure} %options: rgb={} or RGB={} sets structure foreground colour
+\usecolortheme{rose}
+\usecolortheme{dolphin}
+
+%\setbeamercolor{alerted text}{fg=red}
+%\usecolortheme{sidebartab} %highlights current entry in table of contents
+%\usecolortheme[RGB={25,25,112}]{structure} %72,61,139
+%\usecolortheme[RGB={25,25,112}]{structure} %72,61,139
+%\usecolortheme[RGB={39,64,139}]{structure}
+
+%\usecolortheme[RGB={176,48,96}]{alerted text}
+
+%%%%%%%innercolorthemes: changes palette colors
+%\usecolortheme{lily} %used to restore default colours 
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+
+%%%%%%%outercolourthemes:
+%\usecolortheme{dolphin}
+%\usecolortheme{whale}
+%\usecolortheme{seahorse}
+
+%%%%%%complete colorthemes:
+%\usecolortheme{albatross}
+%\usecolortheme{overlystylish}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{seagull}
+
+\setbeamercolor{frametitle}{bg=structure.fg!10!white,fg=structure.fg!10!black}
+\setbeamercolor{block title}{fg=structure.fg!10!black}
+\setbeamercolor{box}{bg=white}
+
+%\setbeamercolor{outline}{fg=structure}
+\setbeamercolor{sidebar}{bg=structure.fg!50!white}
+\setbeamercolor{section in sidebar}{fg=structure}
+\setbeamercolor{subsection in sidebar}{fg=structure}
+\setbeamercolor{subsection in sidebar}{fg=structure}
+\setbeamercolor{alerted text}{fg=purple}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\title[Data for articulatory synthesis]{Virtual Therapy in Head\&Neck cancer}
+\subtitle{Data collection and sharing for articulatory synthesis of patient speech}
+
+\makeatletter
+\def\name#1{\gdef\@name{#1\\}}
+\makeatother
+\author[van Son]{\em Rob van Son}
+
+\institute[NKI-AVL]{{\normalsize Netherlands Cancer Institute, Amsterdam, The Netherlands}\\
+	{\small R.v.Son@nki.nl}}
+\date[DELAD Cork 2017]{15 November 2017}
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\begin{comment}
+
+\AtBeginSection[] %or \AtBeginSubsecton{} 
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection,hideothersubsections]
+  \end{frame}
+}
+\end{comment}
+
+
+\begin{document}
+
+\frame{\titlepage
+	\parbox{0.33\textwidth}{
+	\begin{center}
+	\begin{figure}
+	{\includegraphics[width=0.30\textwidth]{Pictures/logo_ENG_Netherlands_Cancer_Institute_grootformaat}}
+	\end{figure}
+	\end{center}
+	}
+	\parbox{0.32\textwidth}{
+	~
+	}	
+	\parbox{0.33\textwidth}{
+	\begin{center}
+	\begin{figure}
+	{\includegraphics[width=0.30\textwidth]{Pictures/aclc-logo}}
+	\end{figure}
+	\end{center}
+	}
+}
+
+% \section*{Outline}
+% 
+% 	\frame{
+% 	\frametitle{Outline}
+% 	\tableofcontents[hidesubsections] %[pausesections]
+% 	}
+
+\section{Introduction}
+
+\begin{frame}
+	\frametitle{\insertsection}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.60\textwidth]{Pictures/Introduction}
+	\end{figure}
+	\end{center}
+	
+	\vskip -2.5cm
+	
+	\parbox{0.25\textwidth}{
+	\begin{center}
+	\begin{figure}
+	{\includegraphics[width=0.23\textwidth]{Pictures/logo_ENG_Netherlands_Cancer_Institute_grootformaat}}
+	\end{figure}
+	\end{center}
+	}
+	\parbox{0.48\textwidth}{
+	~
+	}	
+	\parbox{0.25\textwidth}{
+	\begin{center}
+	\begin{figure}
+	{\includegraphics[width=0.23\textwidth]{Pictures/aclc-logo}}
+	\end{figure}
+	\end{center}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{TAPAS: Training Network on Automatic Processing of PAthological Speech}
+	
+	\begin{block}{EU promotes Open Data and Open Science}
+	\begin{itemize}
+	\item TAPAS will collect unique data on speakers and pathological speech 
+	\item Speakers are ``vulnerable'': patients and children
+	\item Most stringent requirements on privacy protection (GDPR\&CTR)
+	\item But we still want to share
+	\end{itemize}
+	\end{block}	
+	
+\end{frame}
+
+\section{Patient Speech \& Patient Reported Outcomes}
+
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Pictures/DataVault}}
+\begin{frame}
+	\frametitle{Collections of Patient Speech and PROs}
+	
+	\vskip 5cm
+	\begin{center}
+	{\Large Current practices regarding speech data\\~\\{\footnotesize NKI-AVL (hospital), ACLC (University)}}
+	\end{center}
+\end{frame}
+}
+
+\begin{frame}
+	\frametitle{Data of Head\&Neck tumor patients at NKI-AVL}
+	
+	\begin{block}{Protocols: Speech and Patient Reported Outcomes (PROs\footnote[frame]{PROs are questionaires asking about health and QoL})}
+	\begin{itemize}
+	\item Data pre- and post-treatment (upto 12mnd)
+	\item Oral Cavity protocol ($\sim$95)
+		\begin{itemize}
+		\item Sustained \textipa{a:-u:-i:}; \textipa{ei-Au-\oe y};  word-list (36w); story$^\dagger$ (75w); pa-ta-ka 
+		\item PROs: SHI, SWAL QoL, EORTC QLQ-H\&N35
+		\end{itemize}
+	\item Larynx protocol ($\sim$150)
+		\begin{itemize}
+		\item \textipa{a:} Longest/high/low/loud/soft/sweep; story$^\dagger$
+		\item PROs: LASA, EAT-10, VHI, EORTC QLQ-C30/H\&N35
+		\end{itemize}
+	\item Tracheolaryngectomy (TLE) protocol ($\sim$25)
+		\begin{itemize}
+		\item \textipa{a:} Longest/high/low/loud/soft/sweep; story$^\dagger$; 3 voiced sentences$^*$
+		\item PROs: EQ-5D-5L, SOAL, VHI-10, 
+		\end{itemize}
+	\end{itemize}
+	\end{block}	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Secondary use of patient data}
+		
+	\begin{block}{Currently {\em opt-out}}
+	\begin{itemize}
+	\item Health care data, will switch to {\em opt-in} (informed consent)
+	\item Restricted use ({\em severely} restricted under opt-out) 
+	\item IRB approval needed for {\color{Maroon} \em each} project
+	\item Can we create a speech ``Biobank'' from secondary use data? \\
+	{\em Probably not}
+	\end{itemize}
+	\end{block}	
+	\begin{block}{Switch to {\em Informed Consent}}
+	\begin{itemize}
+	\item All patients asked to consent
+	\item Look for broad consent \\
+	{\em Unclear whether broad consent is possible}
+	\end{itemize}
+	\end{block}	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{pre-2000 longitudinal research of speech development at the ACLC\footnote[frame]{\scriptsize Amsterdam Centre for Language and Communication, Fac. Hum., Univ. of Amsterdam}}
+		
+	\begin{block}{Recordings of mother-child interactions}
+	\begin{itemize}
+	\item Video of 12 Cleft Palate + 6 normal babies during first 2 years {\scriptsize \cite{koopmans1986early}}
+	\item Audio of 5 Hearing impaired and 5 normal hearing babies {\scriptsize \cite{clement1994development,vanderstelt2008deaf}}
+	\item Informed consent of parents for research
+	\item Video material digitized, text files are now digitized
+	\item Intention to make them available to researchers
+	\item Access policies not yet known
+	\end{itemize}
+	\end{block}	
+	
+\end{frame}
+
+
+\section{Virtual Therapy}
+
+\begin{frame}
+	\frametitle{\insertsection}
+	\begin{center}
+	{\large Predicting and synthesizing plausible speech examples after oral cancer treatment}
+	\begin{figure}[l]
+     \includegraphics[width=0.71\framewidth]{Pictures/VirtualTherapyGame}
+	\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Demonstrating functional outcome of therapy}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.95\textwidth]{Pictures/VirtualTherapy}
+	\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data collection}
+
+	\noindent
+	\begin{minipage}[t]{0.50\linewidth}
+		Digital Patient
+	  	\begin{enumerate}[1]
+	  	\item Anatomy \& Physiology\\
+				{\footnotesize MRI, DTI-MRI, Shear-Wave US elasticity\\
+				3D Photo of tongue shape and resection}
+	  	\item Dynamics\\
+				{\footnotesize dynamic MRI, Tongue mobility\&strength, \\
+				3D video, sEMG}
+	  	\item Integration\\
+				{\footnotesize ArtiSynth bio-mechanical model}
+	  	\item Simulation\\
+				{\footnotesize Forward and inverse model training}
+	  	\item Function (Speech)\\
+				{\footnotesize Real Speech \& Articulatory synthesis}
+	  	\end{enumerate}
+	
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[t]{0.45\linewidth}
+			20 patients + 5 healthy
+			\begin{itemize}
+			\item 10 small tumors in oral tongue (surgery)
+			\item 10 larger tumors in base of tongue (radio-therapy) 
+			\end{itemize}
+		
+			\begin{figure}
+			\includegraphics[width=1\textwidth]{Pictures/VirtualTherapy}
+			\end{figure}
+	\end{minipage}
+
+\end{frame}
+
+\section{Data Sharing}
+
+\begin{frame}
+	\frametitle{\insertsection}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.71\framewidth]{Pictures/DataSharing}
+	\end{figure}
+	{\large What can be shared, when, and with whom?}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Talk to: \\
+	MEC, Privacy Officer, Biobank organizers, Privacy lawyers}
+	
+	\begin{block}{Confusion about {\em Informed Consent} (IC) in Open Data/Science}
+	\begin{itemize}
+	\item IC determines what can be done with the data, i.e., cover all uses
+	\item Confusion: IC covered by GDPR and CTR\footnote[frame]{Clinical Trials Regulation (536/2014)} {\scriptsize \cite{EU2014CTR,schneider2016deciphering}}
+	\begin{itemize}
+	\item GDPR: Consent must be specific {\scriptsize \cite{GDPR_EU,chassang2017impact}}
+	\item CTR: One-stop informed consent possible {\scriptsize \cite{mende2017principles,dittrich2015esmod}}
+	\end{itemize}
+	\item EU vs. National rules on health data and consent (CTR, {\scriptsize\cite{chassang2017impact}})
+	\item What health data fall under the research derogation of GDPR, if any?
+	\item What research is ``in the public interest''?
+	\item Open data is international, the GDPR restricts cross-border exchange
+	\end{itemize}
+	\end{block}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Consensus: Privacy by design}
+	
+	\begin{block}{Demands on shared data (under the GDRP)}
+	\begin{itemize}
+	\item Data minimization {\hspace{2cm} \small \em what is not there, cannot be exposed}
+	\begin{itemize}
+	\item Coarse-graining: age-brackets, truncate zip codes, etc.
+	\item Strip metadata from images, movies, MRI
+	\item Censor bars in pictures, movies, MRI 
+	\end{itemize}
+	\item Anonymization {\hspace{2.6cm} \small \em if data is useful, it is not anonymous}
+	\item Pseudonymization {\hspace{2cm} \small \em is effort needed to re-identify relevant?}
+	\item Encryption
+	\item Security, computer and otherwise
+	\item Data transfer agreements, NDA's, Promise of Confidentiality
+	\item[$\Rightarrow$] {\color{Maroon}Take the analysis to the data} {\hspace{2cm} \small \em privacy-preserving platform}
+	\end{itemize}
+	\end{block}	
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Take the analysis to the data}
+	
+	\begin{block}{On-demand analysis from a web browser}
+	\begin{itemize}
+	\item Only a single DTA contract between data-owner and platform owner
+	\item Analyse data without access to micro-data
+	\item Users only see the outcome of the certified analysis
+	\item Platform supplies tools: e.g., \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4276062/}{\color{blue} R}, \href{http://publications.idiap.ch/downloads/papers/2017/Cernak_INTERSPEECH_2017.pdf}{\color{blue} Bob and Kaldi} {\scriptsize\cite{cernak2017bob,DataSHIELD2014:short}}
+	\item Platform enforces access rights, audit trails, and security
+	\end{itemize}
+	\end{block}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{The BEAT platform \hspace{7cm} {\scriptsize\cite{anjos2017beat}}}
+	
+	\begin{block}{Biometrics Evaluation and Testing (\href{https://www.beat-eu.org/platform/}{\color{blue} BEAT}) \hspace{4cm} {\scriptsize\cite{BEATweb}}}
+	\begin{itemize}
+	\item EU 7$^{th}$ framework program
+	\item Part of European computing e-infrastructure for Open Science
+	\item Solution for open access, scientific information sharing and re-use
+	\item Sharing access to data and source code
+	\item Protecting privacy and confidentiality
+	\item Data from different experiments can be easily compared and searched
+	\item Challenges and education
+	\item Attestation mechanism for reports
+	\item[$\Rightarrow$] {\color{Maroon}Chosen as the data platform for TAPAS}
+	\end{itemize}
+	\end{block}	
+	
+	
+	\let\thefootnote\relax\footnotetext{\hspace{-16.5pt}\href{https://arxiv.org/abs/1704.02319}{\color{blue} \scriptsize Anjos et al. (2017). {\em BEAT: An Open-Source Web-Based Open-Science Platform}. arXiv preprint arXiv:1704.02319.}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{BEAT overview}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[height=0.8\textheight]{Pictures/Beat_overview}
+	\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{BEAT toolchain block}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.85\textwidth]{Pictures/Beat_block}
+	\end{figure}
+	~\\
+	Individual Blocks are strung together into tool-chains/experiments
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{BEAT experiment configurator}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.85\textwidth]{Pictures/BEAT_experiment_configurator}
+	\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{BEAT automatically generated tables}
+		
+	\begin{center}
+	\begin{figure}[l]
+     \includegraphics[width=0.85\textwidth]{Pictures/BEAT_table}
+	\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conclusions}
+	
+	\begin{block}{TAPAS: Sharing data}
+	\begin{itemize}
+	\item Not clear what will be allowed under the GDPR\&CTR 
+	\item ``International'' sharing could be a problem (outside EU)
+	\item In the mean time: use Privacy Preserving Platform
+	\item[$\Rightarrow$] TAPAS will use BEAT platform
+	\end{itemize}
+	\end{block}	
+	
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+	~\\~\\
+	{\Huge Thank You!}\\
+	~\\~\\
+	\resizebox{0.1\linewidth}{!}{?}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+        \frametitle{More information}
+\bibliographystyle{ieeetr}
+\begin{scriptsize}
+\bibliography{Delad_Cork2017}
+\end{scriptsize}
+
+\vskip 0.5cm
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Pictures/CC-share-alike}\\
+{\small This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.}\\
+\copyright {\YEAR}  R.J.J.H. van Son
+\end{center}
+
+\end{frame}
+
+\end{document}
